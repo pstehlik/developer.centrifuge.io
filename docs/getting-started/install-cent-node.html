@@ -42,7 +42,7 @@
         </script></nav></div><div class="container mainContainer docMainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Installing the Centrifuge Node</h1></header><article><div><span><p>This section describes the procedure to install the Centrifuge node. This involves creating an Ethereum account, installing the Centrifuge API node and installing the Ethereum Rinkeby node.</p>
 <h2><a class="anchor" aria-hidden="true" id="creating-an-ethereum-account"></a><a href="#creating-an-ethereum-account" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating an Ethereum account</h2>
 <ol>
-<li>Install the stable version of Go Ethereum:</li>
+<li>Install the stable version of <a href="https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Ubuntu">Go Ethereum</a>:</li>
 </ol>
 <pre><code class="hljs css language-bash">$ sudo add-apt-repository -y ppa:ethereum/ethereum
 </code></pre>
@@ -71,33 +71,15 @@ Address: {168bc315a2ee09042d83d7c5811b533620531f67}
 </blockquote>
 <h2><a class="anchor" aria-hidden="true" id="installing-the-centrifuge-node"></a><a href="#installing-the-centrifuge-node" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing the Centrifuge Node</h2>
 <h3><a class="anchor" aria-hidden="true" id="system-requirements-for-installing-the-centrifuge-node"></a><a href="#system-requirements-for-installing-the-centrifuge-node" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>System Requirements for Installing the Centrifuge Node:</h3>
-<p>To accept the incoming P2P connections, you will need to open two ports for incoming TCP connections.</p>
+<p>To accept the incoming P2P connections, you will need to open two ports for incoming TCP connections.
+P2P Port: open ingress/egress
+API Port: restrict at will, only you or your upstream systems should need to talk to it</p>
 <!--
 **Resource Requirements for Centrifuge API Node**
 * 1 Gigabyte memory
 * 1 core
-* Allocate 100 Gigabyte of disk space (local copy of document data).
 -->
-<h3><a class="anchor" aria-hidden="true" id="installing-the-centrifuge-node-1"></a><a href="#installing-the-centrifuge-node-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing the Centrifuge Node</h3>
-<p>Once you have installed all the necessary packages, follow these steps to install the Centrifuge node:</p>
-<ol>
-<li><p>Download and install the latest <a href="https://github.com/centrifuge/go-centrifuge/releases">centrifuge binary</a>.</p>
-<p>If you want to build the node from source, follow the description in the <a href="https://github.com/centrifuge/go-centrifuge/blob/develop/README.md">source code</a>.</p></li>
-<li><p>Add the Centrifuge binary to the <code>$PATH</code>. Or, modify the command invocation to point to the correct library.</p></li>
-<li><p>Create the <code>config.yaml</code> file using the <code>createconfig</code> utility:</p></li>
-</ol>
-<pre><code class="hljs css language-bash">$ centrifuge createconfig -z  ~/.ethereum/keystore/KEY-FILE&gt; -e ws://127.0.0.1:8546 -t &lt;PATH-TO-CONFIG-FILE&gt; \
--a 8082 -p 38204
-</code></pre>
-<p>This command automatically adds the Identity keys to the <code>config.yaml</code> file.
-Replace the <code>_KEY-FILE_</code> with the key file you obtained when creating the Ethereum account and <code>_PATH-TO-CONFIG-FILE_</code> with the location where you want the <code>config.yaml</code>  file to be stored.</p>
-<ol start="3">
-<li>Run the Centrifuge Node using the <code>config.yaml</code> file you created:</li>
-</ol>
-<pre><code class="hljs css language-bash">$ centrifuge run -c /PATH-TO-CONFIG-FILE/config.yaml
-</code></pre>
-<p>Replace the <code>_PATH-TO-CONFIG-FILE_</code> with the location of the <code>config.yaml</code> file.</p>
-<h3><a class="anchor" aria-hidden="true" id="installing-the-ethereum-rinkeby-node"></a><a href="#installing-the-ethereum-rinkeby-node" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing the Ethereum Rinkeby Node</h3>
+<h3><a class="anchor" aria-hidden="true" id="running-the-ethereum-rinkeby-node"></a><a href="#running-the-ethereum-rinkeby-node" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Running the Ethereum Rinkeby Node</h3>
 <p>Rinkeby is a testnet</p>
 <p><strong>Resource Requirements</strong></p>
 <ul>
@@ -121,31 +103,56 @@ Replace the <code>_KEY-FILE_</code> with the key file you obtained when creating
 <li>Optionally, you can use SSDs speed it up.</li>
 </ul></li>
 </ul>
-<ol>
-<li><p>To run Ethereum node in the light mode as a binary, install <code>geth</code>. Installation instructions are available at <a href="https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Ubuntu">https://github.com/ethereum/go-ethereum/wiki/Installation-Instructions-for-Ubuntu</a>.</p></li>
-<li><p>Set the following environment variables in the <code>config.yaml</code> file:</p></li>
-</ol>
-<ul>
-<li>RPC_PORT = 8545</li>
-<li>WS_PORT = 8546</li>
-<li>ETH_DATADIR = $HOME/Ethereum/Library/rinkeby</li>
-</ul>
-<ol start="3">
-<li>Start the <code>geth</code> process:</li>
-</ol>
+<p>Start the <code>geth</code> process:</p>
 <pre><code class="hljs css language-bash">$ geth --rinkeby --light --rpc --rpcapi db,eth,net,web3,txpool --ws \
 --wsorigins <span class="hljs-string">"*"</span> --wsapi db,eth,net,web3,txpool &gt; /tmp/geth.log 2&gt;&amp;1 &amp;
 </code></pre>
+<p>This command runs go-ethereum in the light mode for speed and simplicity. You can modify this command based on your requirements.</p>
 <p>You now need to wait for about 1-2 hours depending on the resources under the P2P connected network for the local node to sync up with the Rinkeby network.</p>
+<h3><a class="anchor" aria-hidden="true" id="installing-the-centrifuge-node-1"></a><a href="#installing-the-centrifuge-node-1" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Installing the Centrifuge Node</h3>
+<p>Once you have installed all the necessary packages, follow these steps to install the Centrifuge node:</p>
+<ol>
+<li><p>Download and install the latest <a href="https://github.com/centrifuge/go-centrifuge/releases">centrifuge binary</a>.</p>
+<p>If you want to build the node from source, follow the description in the <a href="https://github.com/centrifuge/go-centrifuge/blob/develop/README.md">source code</a>.</p></li>
+<li><p>Add the Centrifuge binary to the <code>$PATH</code>. Or, modify the command invocation to point to the correct library.</p></li>
+<li><p>Create the <code>config.yaml</code> file using the <code>createconfig</code> utility:</p></li>
+</ol>
+<pre><code class="hljs css language-bash">$ centrifuge createconfig -z  ~/.ethereum/keystore/KEY-FILE&gt; -e ws://127.0.0.1:8546 -t &lt;PATH-TO-CONFIG-FILE&gt; \
+-a 8082 -p 38204
+</code></pre>
+<p>This command automatically creates an Identity and the key pairs. It then generates the config.yaml file required to run the node.</p>
+<p>Replace the <code>_KEY-FILE_</code> with the key file you obtained when creating the Ethereum account and <code>_PATH-TO-CONFIG-FILE_</code> with the location where you want the <code>config.yaml</code>  file to be stored.</p>
+<ol start="4">
+<li>Run the Centrifuge Node using the <code>config.yaml</code> file you created:</li>
+</ol>
+<pre><code class="hljs css language-bash">$ centrifuge run -c /PATH-TO-CONFIG-FILE/config.yaml
+</code></pre>
+<p>Replace the <code>_PATH-TO-CONFIG-FILE_</code> with the location of the <code>config.yaml</code> file.</p>
+<h4><a class="anchor" aria-hidden="true" id="additional-custom-configuration"></a><a href="#additional-custom-configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Additional custom configuration</h4>
+<ul>
+<li>Configure node under NAT</li>
+</ul>
+<p>If you want your node to be accessible outside your private network, you will need to manually specify the External IP of the node:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">p2p:</span>
+<span class="hljs-attr">  externalIP:</span> <span class="hljs-string">"100.111.112.113"</span>
+</code></pre>
+<ul>
+<li>Configure notification webhook (for incoming data from other peers)</li>
+</ul>
+<p>To receive an event when a new document has been shared with your node, set your WebHook endpoint in the config.yaml file:</p>
+<pre><code class="hljs css language-yaml"><span class="hljs-attr">notifications:</span>
+<span class="hljs-attr">  endpoint:</span> <span class="hljs-string">"YOUR_WEBHOOK_ENDPOINT"</span>
+</code></pre>
+<p>For more information, see the <a href="https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.1#/NotificationDummyService/Notify">Notification Payload</a></p>
 <h3><a class="anchor" aria-hidden="true" id="post-install-verification"></a><a href="#post-install-verification" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Post-Install Verification</h3>
 <p>To make sure that your Centrifuge node setup was successful, you can run the following API calls. For example:</p>
 <ul>
 <li><p>To perform a health check, ping your node:</p>
-<pre><code class="hljs css language-bash">curl -X GET <span class="hljs-string">"https://localhost/ping"</span> -H <span class="hljs-string">"accept: application/json"</span>
+<pre><code class="hljs css language-bash">$ curl -X GET <span class="hljs-string">"https://localhost/ping"</span> -H <span class="hljs-string">"accept: application/json"</span>
 </code></pre></li>
 <li><p>To create an invoice:</p>
-<pre><code class="hljs css language-bash">curl -X POST <span class="hljs-string">"https://localhost/invoice"</span> -H <span class="hljs-string">"accept: application/json"</span> -H \
-<span class="hljs-string">"Content-Type: application/json"</span> -d <span class="hljs-string">"{ \"collaborators\": [ \"string\" ], \
+<pre><code class="hljs css language-bash">$ curl -X POST <span class="hljs-string">"https://localhost/invoice"</span> -H <span class="hljs-string">"accept: application/json"</span> \
+-H <span class="hljs-string">"Content-Type: application/json"</span> -d <span class="hljs-string">"{ \"collaborators\": [ \"string\" ], \
 \"data\": { \"invoice_status\": \"string\", \"invoice_number\": \"string\", \
 \"sender_name\": \"string\", \"sender_street\": \"string\", \"sender_city\": \
 \"string\", \"sender_zipcode\": \"string\", \"sender_country\": \"string\", \
@@ -155,7 +162,8 @@ Replace the <code>_KEY-FILE_</code> with the key file you obtained when creating
 \"gross_amount\": \"string\", \"net_amount\": \"string\", \
 \"tax_amount\": \"string\", \"tax_rate\": \"string\", \
 \"recipient\": \"string\", \"sender\": \"string\", \"payee\": \"string\", \
-\"comment\": \"string\", \"due_date\": \"2018-10-19T08:18:22.167Z\", \ \"date_created\": \"2018-10-19T08:18:22.167Z\", \"extra_data\": \"string\" }}"</span>
+\"comment\": \"string\", \"due_date\": \"2018-10-19T08:18:22.167Z\", \ 
+\"date_created\": \"2018-10-19T08:18:22.167Z\", \"extra_data\": \"string\" }}"</span>
 </code></pre></li>
 </ul>
 </span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/overview/introduction"><span class="arrow-prev">← </span><span>Previous</span></a><a class="docs-next button" href="/docs/cent-os-administration/manage-cent-os"><span>Next</span><span class="arrow-next"> →</span></a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/centrifuge_mark_white.svg" alt="Centrifuge Developer" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/getting-started/prerequisites">Getting Started</a><a href="https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.1" target="_blank" rel="noreferrer noopener">Centrifuge Node Api</a><a href="/docs/further-reading/code-of-conduct">Code of conduct</a></div><div><h5>Community</h5><a href="https://medium.com/centrifuge" target="_blank" rel="noreferrer noopener">Medium</a><a href="https://twitter.com/centrifuge" target="_blank" rel="noreferrer noopener">Twitter</a><a href="https://centrifuge-io.slack.com/" target="_blank" rel="noreferrer noopener">Slack</a></div><div><h5>More</h5><a href="https://github.com/centrifuge/go-centrifuge" target="_blank" rel="noreferrer noopener">GitHub</a><a class="github-button" href="https://github.com/centrifuge/go-centrifuge" data-icon="octicon-star" data-count-href="/centrifuge/go-centrifuge/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 Centrifuge Inc</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
