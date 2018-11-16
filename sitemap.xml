@@ -7,5 +7,6 @@
 <url> <loc>https://developer.centrifuge.io/docs/further-reading/code-of-conduct</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://developer.centrifuge.io/docs/further-reading/code-of-conduct" /> </url>
 <url> <loc>https://developer.centrifuge.io/docs/further-reading/more-info</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://developer.centrifuge.io/docs/further-reading/more-info" /> </url>
 <url> <loc>https://developer.centrifuge.io/docs/getting-started/install-cent-node</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://developer.centrifuge.io/docs/getting-started/install-cent-node" /> </url>
+<url> <loc>https://developer.centrifuge.io/docs/getting-started/workflow</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://developer.centrifuge.io/docs/getting-started/workflow" /> </url>
 <url> <loc>https://developer.centrifuge.io/docs/overview/introduction</loc> <changefreq>hourly</changefreq> <priority>1.0</priority> <xhtml:link rel="alternate" hreflang="en" href="https://developer.centrifuge.io/docs/overview/introduction" /> </url>
 </urlset>
