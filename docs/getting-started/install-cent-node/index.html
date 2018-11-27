@@ -104,7 +104,7 @@ API Port: restrict at will, only you or your upstream systems should need to tal
 </ul></li>
 </ul>
 <p>Start the <code>geth</code> process:</p>
-<pre><code class="hljs css language-bash">$ geth --rinkeby --light --rpc --rpcapi db,eth,net,web3,txpool --ws \
+<pre><code class="hljs css language-bash">$ geth --rinkeby --syncmode light --rpc --rpcapi db,eth,net,web3,txpool --ws \
 --wsorigins <span class="hljs-string">"*"</span> --wsapi db,eth,net,web3,txpool &gt; /tmp/geth.log 2&gt;&amp;1 &amp;
 </code></pre>
 <p>This command runs go-ethereum in the light mode for speed and simplicity. You can modify this command based on your requirements.</p>
