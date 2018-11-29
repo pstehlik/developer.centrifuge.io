@@ -148,10 +148,10 @@ API Port: restrict at will, only you or your upstream systems should need to tal
 <p>To make sure that your Centrifuge node setup was successful, you can run the following API calls. For example:</p>
 <ul>
 <li><p>To perform a health check, ping your node:</p>
-<pre><code class="hljs css language-bash">$ curl -X GET <span class="hljs-string">"https://localhost/ping"</span> -H <span class="hljs-string">"accept: application/json"</span>
+<pre><code class="hljs css language-bash">$ curl -k -X GET <span class="hljs-string">"https://localhost:8082/ping"</span> -H <span class="hljs-string">"accept: application/json"</span>
 </code></pre></li>
 <li><p>To create an invoice:</p>
-<pre><code class="hljs css language-bash">$ curl -X POST <span class="hljs-string">"https://localhost/invoice"</span> -H <span class="hljs-string">"accept: application/json"</span> \
+<pre><code class="hljs css language-bash">$ curl -k -X POST <span class="hljs-string">"https://localhost:8082/invoice"</span> -H <span class="hljs-string">"accept: application/json"</span> \
 -H <span class="hljs-string">"Content-Type: application/json"</span> -d <span class="hljs-string">"{ \"collaborators\": [ \"string\" ], \
 \"data\": { \"invoice_status\": \"string\", \"invoice_number\": \"string\", \
 \"sender_name\": \"string\", \"sender_street\": \"string\", \"sender_city\": \
