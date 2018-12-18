@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Create Config · Centrifuge Developer</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="The `centrifuge createconfig` command automatically generates all required key pairs and config files"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Create Config · Centrifuge Developer"/><meta property="og:type" content="website"/><meta property="og:url" content="https://developer.centrifuge.io//index.html"/><meta property="og:description" content="The `centrifuge createconfig` command automatically generates all required key pairs and config files"/><meta property="og:image" content="https://developer.centrifuge.io/img/docusaurus.png"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://developer.centrifuge.io/img/docusaurus.png"/><link rel="shortcut icon" href="/img/favicon.png"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css"/><script>
+              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+              ga('create', 'UA-100764518-3', 'auto');
+              ga('send', 'pageview');
+            </script><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="https://unpkg.com/vanilla-back-to-top@7.1.14/dist/vanilla-back-to-top.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function() {
+          addBackToTop(
+            {"zIndex":100}
+          )
+        });
+        </script><link rel="stylesheet" href="/css/prism.css"/><link rel="stylesheet" href="/css/main.css"/></head><body class="sideNavVisible"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/centrifuge.developer.png" alt="Centrifuge Developer"/></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/overview/introduction" target="_self">Docs</a></li><li class=""><a href="https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.2" target="_blank">Centrifuge Node API</a></li><li class=""><a href="https://github.com/centrifuge" target="_blank">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><input type="text" id="search_input_react" placeholder="Search" title="Search"/></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="container docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><i></i></div><h2><i>›</i><span>Further Reading</span></h2></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Overview</h3><ul><li class="navListItem"><a class="navItem" href="/docs/overview/introduction">Introduction</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Getting Started</h3><ul><li class="navListItem"><a class="navItem" href="/docs/getting-started/install-cent-node">Installing the Centrifuge Node</a></li><li class="navListItem"><a class="navItem" href="/docs/getting-started/workflow">Document State Consensus</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Usage</h3><ul><li class="navListItem"><a class="navItem" href="/docs/cent-os-administration/manage-cent-os">Interacting with the Centrifuge Node</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Further Reading</h3><ul><li class="navListItem"><a class="navItem" href="/docs/further-reading/more-info">Node API</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/further-reading/create-config">Create Config</a></li><li class="navListItem"><a class="navItem" href="/docs/further-reading/code-of-conduct">Code of Conduct</a></li></ul></div></div></section></div><script>
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              const headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                if (event.target.tagName === 'A') {
+                  document.body.classList.remove('tocActive');
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docMainContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle">Create Config</h1></header><article><div><span><p>The <code>centrifuge createconfig</code> command automatically generates all required key pairs and config files
+to run the node.</p>
+<pre><code class="hljs css language-bash">$ centrifuge createconfig -z  ~/.ethereum/keystore/&lt;KEY-FILE&gt; -e ws://127.0.0.1:8546 -t &lt;DEFINE_CONFIG_DIR_NAME&gt; \
+-a 8082 -p 38204
+</code></pre>
+<p>Replace the <code>&lt;KEY-FILE&gt;</code> with the key file you obtained when creating the Ethereum account and <code>&lt;DEFINE_CONFIG_DIR_NAME&gt;</code> with the location where you want the <code>config.yaml</code>  file to be stored.</p>
+<blockquote>
+<p><strong>NOTE:</strong> If the provided <code>keystore/&lt;KEY-FILE&gt;</code> is encrypted the password needs to be added with <code>-z SAMPLE_PASSWORD</code> to successfully create the config.</p>
+</blockquote>
+<p>Per default the centrifuge network <code>russianhill</code> is using the Ethereum testnet rinkeby.</p>
+<p><strong>Flags for createconfig command:</strong></p>
+<pre><code class="hljs css language-text">   -z, --accountkeypath string   Path of Ethereum Account Key JSON file (default "$HOME/datadir/main.key")
+  -k, --accountpwd string       Ethereum Account Password
+  -a, --apiPort int             Api Port (default 8082)
+  -b, --bootstraps strings      Bootstrap P2P Nodes
+  -e, --ethnodeurl string       URL of Ethereum Client Node (default "http://127.0.0.1:9545")
+  -h, --help                    help for createconfig
+  -n, --network string          Default Network (default "russianhill")
+  -p, --p2pPort int             Peer-to-Peer Port (default 38202)
+   -t, --targetdir string        Target Data Dir (default "$HOME/datadir")
+  -x, --txpoolaccess            Transaction Pool access (default true)
+</code></pre>
+<p>In detail the command performs the following actions:</p>
+<ul>
+<li>create a personal centrifugeID</li>
+<li>create a directory for the <a href="http://leveldb.org/">levelDB</a> (key/value storage)</li>
+<li>create an Identity Contract (<a href="https://github.com/ethereum/EIPs/issues/725">ERC725</a>) on Ethereum</li>
+<li>create a signing keypair (SECP256K1) used to verify the signatures on the p2p layer</li>
+<li>create a second authentication keypair (SECP256K1) used to authenticate Ethereum transactions</li>
+<li>add the generated public keys to the identity contract</li>
+<li>create a custom <code>config.yaml</code> file</li>
+</ul>
+<p>The generated keys are saved in PEM files.</p>
+<blockquote>
+<p>NOTE: The generated <code>config.yaml</code> includes information about your Ethereum private key. Make sure to store it in a secure environment.</p>
+</blockquote>
+<p>The provided Ethereum account in the <code>keystore/&lt;KEY-FILE&gt;</code> needs to have ETH to execute the <code>centrifuge createconfig</code> command.</p>
+<p><a href="https://www.rinkeby.io/#faucet">Rinkeby faucet</a> to get ETH for testing.</p>
+<h2><a class="anchor" aria-hidden="true" id="using-infura"></a><a href="#using-infura" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using Infura</h2>
+<p>It is recommended to setup up a local Ethereum node with <code>geth</code> to be fully independent and decentralized.
+However, it is possible to run the centrifuge node against <a href="https://infura.io/">Infura</a>.</p>
+<pre><code class="hljs css language-bash">$ centrifuge createconfig -z  ~/.ethereum/keystore/&lt;KEY-FILE&gt; -e https://rinkeby.infura.io/v3/&lt;INFURA_ENDPOINT_ID&gt; -t &lt;DEFINE_CONFIG_DIR_NAME&gt; \
+-a 8082 -p 38204 -x=<span class="hljs-literal">false</span>
+</code></pre>
+<p>Instead of running against a local node replace -e <code>https://rinkeby.infura.io/v3/&lt;INFURA_PROJECT_ID&gt;</code> with your
+personal Infura project ID instead.</p>
+<p>For Infura the flag of the centrifuge node for transaction pool access needs to be <code>-x=false</code></p>
+<h2><a class="anchor" aria-hidden="true" id="using-parity"></a><a href="#using-parity" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Using Parity</h2>
+<p>For using a Parity node instead of a geth node. Please reach us on Slack.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/further-reading/more-info"><span class="arrow-prev">← </span><span>Previous</span></a><a class="docs-next button" href="/docs/further-reading/code-of-conduct"><span>Next</span><span class="arrow-next"> →</span></a></div></div></div></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/centrifuge_mark_white.svg" alt="Centrifuge Developer" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/getting-started/prerequisites">Getting Started</a><a href="https://app.swaggerhub.com/apis/centrifuge.io/cent-node/0.0.1" target="_blank" rel="noreferrer noopener">Centrifuge Node Api</a><a href="/docs/further-reading/code-of-conduct">Code of conduct</a></div><div><h5>Community</h5><a href="https://medium.com/centrifuge" target="_blank" rel="noreferrer noopener">Medium</a><a href="https://twitter.com/centrifuge" target="_blank" rel="noreferrer noopener">Twitter</a><a href="https://join.slack.com/t/centrifuge-io/shared_invite/enQtNDk1MzkwODM4OTgxLWRlNTU4NDQzOWIwYWEzNGRhN2UzMzQwNThjZjI0ZmIxMTU4NmQwMjc2ZDBkOTEyNWJhMjE4MzA2NTE5MWU1NWE" target="_blank" rel="noreferrer noopener">Slack</a></div><div><h5>More</h5><a href="https://github.com/centrifuge/go-centrifuge" target="_blank" rel="noreferrer noopener">GitHub</a><a class="github-button" href="https://github.com/centrifuge/go-centrifuge" data-icon="octicon-star" data-count-href="/centrifuge/go-centrifuge/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><section class="copyright">Copyright © 2018 Centrifuge Inc</section></footer></div><script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script><script>
+              var search = docsearch({
+                
+                apiKey: 'e1804220d11b9eefa76395d7f70a2e45',
+                indexName: 'centrifuge',
+                inputSelector: '#search_input_react'
+              });
+            </script></body></html>
